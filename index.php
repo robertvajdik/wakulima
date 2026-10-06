@@ -8,7 +8,21 @@ $bodyClass       = 'page-home';
 $posts = $pdo->query("SELECT id, title, slug, excerpt, image, created_at FROM posts WHERE status = 'published' ORDER BY created_at DESC LIMIT 3")->fetchAll();
 $programs = $pdo->query("SELECT id, title, slug, icon, summary FROM programs WHERE is_active = 1 ORDER BY sort_order ASC LIMIT 6")->fetchAll();
 $galleryPreview = $pdo->query("SELECT id, image, caption FROM gallery ORDER BY sort_order ASC, id DESC LIMIT 8")->fetchAll();
-$hasGallery = (bool)$galleryPreview;
+
+// Static photo set used when the DB gallery is empty. Dimensions match the
+// files written by assets/fotos/_convert.py (full/ copies).
+$staticFotos = [
+    ['file' => 'wakulima01', 'w' => 1440, 'h' => 1920],
+    ['file' => 'wakulima02', 'w' => 1440, 'h' => 1920],
+    ['file' => 'wakulima03', 'w' => 1440, 'h' => 1920],
+    ['file' => 'wakulima04', 'w' => 1080, 'h' => 1436],
+    ['file' => 'wakulima05', 'w' => 810,  'h' => 1080],
+    ['file' => 'wakulima06', 'w' => 1080, 'h' => 810],
+    ['file' => 'wakulima07', 'w' => 810,  'h' => 1080],
+    ['file' => 'wakulima08', 'w' => 1062, 'h' => 1600],
+    ['file' => 'wakulima09', 'w' => 1600, 'h' => 1062],
+];
+$hasGallery = true;
 
 $icons = [
     'leaf' => '🌱', 'users' => '🤝', 'coins' => '💰', 'book' => '📖',
@@ -31,7 +45,10 @@ require __DIR__ . '/includes/header.php';
     </div>
     <div class="hero-visual">
       <div class="frame">
-        <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="Wakulima farmers">
+        <picture>
+          <source type="image/webp" srcset="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.webp">
+          <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.jpg" alt="Wakulima farmers" width="1440" height="1920">
+        </picture>
       </div>
       <div class="tag">
         <span class="dot"></span>
@@ -99,7 +116,6 @@ require __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<?php if ($galleryPreview): ?>
 <section>
   <div class="container">
     <div class="section-head">
@@ -107,21 +123,39 @@ require __DIR__ . '/includes/header.php';
       <h2><?php echo current_lang() === 'sw' ? 'Muhtasari wa kazi yetu.' : 'A glimpse of our work.'; ?></h2>
     </div>
     <div class="gallery-grid">
-      <?php foreach (array_slice($galleryPreview, 0, 8) as $g): [$gw, $gh] = image_dimensions($g['image']); ?>
-        <a href="<?php echo e(image_url($g['image'])); ?>"
-           class="gallery-item"
-           data-pswp-width="<?php echo $gw; ?>"
-           data-pswp-height="<?php echo $gh; ?>"
-           target="_blank" rel="noopener">
-          <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
-          <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
-        </a>
-      <?php endforeach; ?>
+      <?php if ($galleryPreview): ?>
+        <?php foreach (array_slice($galleryPreview, 0, 8) as $g): [$gw, $gh] = image_dimensions($g['image']); ?>
+          <a href="<?php echo e(image_url($g['image'])); ?>"
+             class="gallery-item"
+             data-pswp-width="<?php echo $gw; ?>"
+             data-pswp-height="<?php echo $gh; ?>"
+             target="_blank" rel="noopener">
+            <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
+            <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
+          </a>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <?php foreach ($staticFotos as $f):
+            $full  = SITE_URL . '/assets/images/fotos/full/'  . $f['file'];
+            $thumb = SITE_URL . '/assets/images/fotos/thumb/' . $f['file']; ?>
+          <a href="<?php echo e($full . '.jpg'); ?>"
+             class="gallery-item"
+             data-pswp-width="<?php echo $f['w']; ?>"
+             data-pswp-height="<?php echo $f['h']; ?>"
+             target="_blank" rel="noopener">
+            <picture>
+              <source type="image/webp" srcset="<?php echo e($thumb . '.webp'); ?>">
+              <img src="<?php echo e($thumb . '.jpg'); ?>" alt="Wakulima" loading="lazy">
+            </picture>
+          </a>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
-    <p class="section-actions"><a href="gallery.php" class="btn btn-outline"><?php echo e(t('home.view_all')); ?> →</a></p>
+    <?php if ($galleryPreview): ?>
+      <p class="section-actions"><a href="gallery.php" class="btn btn-outline"><?php echo e(t('home.view_all')); ?> →</a></p>
+    <?php endif; ?>
   </div>
 </section>
-<?php endif; ?>
 
 <section class="join-band">
   <div class="container">

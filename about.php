@@ -29,7 +29,10 @@ require __DIR__ . '/includes/header.php';
           : 'Our approach is rooted in the belief that when farmers work together, they can overcome challenges, access better opportunities, and create lasting economic and social change within their communities.'; ?></p>
     </div>
     <div>
-      <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="Wakulima" class="rounded-hero-img">
+      <picture>
+        <source type="image/webp" srcset="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima02.webp">
+        <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima02.jpg" alt="Wakulima" class="rounded-hero-img" width="1440" height="1920">
+      </picture>
     </div>
   </div>
 </section>

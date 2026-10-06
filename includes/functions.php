@@ -13,7 +13,7 @@ function current_lang() {
         $_SESSION['lang'] = $_COOKIE['wmg_lang'];
         return $_SESSION['lang'];
     }
-    return 'en';
+    return 'sw';
 }
 
 function t($key, $default = null) {
