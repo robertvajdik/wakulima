@@ -70,10 +70,10 @@ require __DIR__ . '/includes/header.php';
                  data-fancybox="member-<?php echo (int)$m['id']; ?>"
                  data-caption="<?php echo e($m['full_name']); ?>"
                  aria-label="<?php echo e($m['full_name']); ?>">
-                <img src="<?php echo e($photoUrl); ?>" alt="<?php echo e($m['full_name']); ?>">
+                <img src="<?php echo e($photoUrl); ?>" alt="<?php echo e($m['full_name']); ?>" loading="lazy" decoding="async">
               </a>
             <?php else: ?>
-              <img src="<?php echo e($photoUrl); ?>" alt="<?php echo e($m['full_name']); ?>">
+              <img src="<?php echo e($photoUrl); ?>" alt="<?php echo e($m['full_name']); ?>" loading="lazy" decoding="async">
             <?php endif; ?>
           </div>
           <h3><?php echo e($m['full_name']); ?></h3>
