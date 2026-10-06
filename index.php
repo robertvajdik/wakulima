@@ -47,7 +47,7 @@ require __DIR__ . '/includes/header.php';
       <div class="frame">
         <picture>
           <source type="image/webp" srcset="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.webp">
-          <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.jpg" alt="Wakulima farmers" width="1440" height="1920">
+          <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.jpg" alt="<?php echo current_lang() === 'sw' ? 'Wakulima wa Tanzania shambani' : 'Tanzanian farmers at work in the fields'; ?>" width="1440" height="1920" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="tag">
@@ -124,12 +124,11 @@ require __DIR__ . '/includes/header.php';
     </div>
     <div class="gallery-grid">
       <?php if ($galleryPreview): ?>
-        <?php foreach (array_slice($galleryPreview, 0, 8) as $g): [$gw, $gh] = image_dimensions($g['image']); ?>
+        <?php foreach (array_slice($galleryPreview, 0, 8) as $g): ?>
           <a href="<?php echo e(image_url($g['image'])); ?>"
              class="gallery-item"
-             data-pswp-width="<?php echo $gw; ?>"
-             data-pswp-height="<?php echo $gh; ?>"
-             target="_blank" rel="noopener">
+             data-fancybox="home"
+             <?php if ($g['caption']): ?>data-caption="<?php echo e($g['caption']); ?>"<?php endif; ?>>
             <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
             <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
           </a>
@@ -140,9 +139,7 @@ require __DIR__ . '/includes/header.php';
             $thumb = SITE_URL . '/assets/images/fotos/thumb/' . $f['file']; ?>
           <a href="<?php echo e($full . '.jpg'); ?>"
              class="gallery-item"
-             data-pswp-width="<?php echo $f['w']; ?>"
-             data-pswp-height="<?php echo $f['h']; ?>"
-             target="_blank" rel="noopener">
+             data-fancybox="home">
             <picture>
               <source type="image/webp" srcset="<?php echo e($thumb . '.webp'); ?>">
               <img src="<?php echo e($thumb . '.jpg'); ?>" alt="Wakulima" loading="lazy">

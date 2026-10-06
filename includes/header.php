@@ -1,13 +1,16 @@
 <?php
 require_once __DIR__ . '/functions.php';
 if (!headers_sent()) {
-    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    // no-cache (not no-store) still revalidates but allows bfcache / instant back-forward.
+    header('Cache-Control: no-cache, must-revalidate, max-age=0');
     header('Pragma: no-cache');
     header('Expires: 0');
 }
 send_security_headers();
 $cspNonce = csp_nonce();
 $lang = current_lang();
+$altLang = $lang === 'sw' ? 'en' : 'sw';
+if (!headers_sent()) header('Content-Language: ' . $lang);
 $pageTitle = $pageTitle ?? setting('site_name', 'Wakulima Maendeleo Group');
 $siteName = setting('site_name', 'Wakulima Maendeleo Group');
 ?><!doctype html>
@@ -33,9 +36,14 @@ $metaKeywords    = $pageKeywords    ?? t('meta.site.keywords', '');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/jpeg" href="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg">
+<link rel="apple-touch-icon" href="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg">
 <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css">
 <?php if (!empty($hasGallery) || !empty($hasLightbox)): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+<?php endif; ?>
+<?php if (($bodyClass ?? '') === 'page-home'): ?>
+<link rel="preload" as="image" href="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.webp" type="image/webp" fetchpriority="high">
 <?php endif; ?>
 
 <?php
@@ -53,21 +61,35 @@ $canonical = SITE_URL . $canonicalPath;
 
 <?php
 // ── Open Graph + Twitter ──
-$ogImage = SITE_URL . '/assets/images/wakulima_logo_bw.jpeg';
+// Pages can override $pageOgImage with a page-specific absolute URL (and
+// optional $pageOgImageW / $pageOgImageH). Default is a wide landscape foto
+// which previews well on Facebook / LinkedIn / X.
+$ogImage = $pageOgImage ?? SITE_URL . '/assets/images/fotos/full/wakulima09.jpg';
+$ogImageW = $pageOgImageW ?? 1600;
+$ogImageH = $pageOgImageH ?? 1062;
+$ogImageAlt = $pageOgImageAlt ?? $pageTitle;
 $ogDescription = $pageDescription ?? setting('site_tagline');
+$ogType = $pageOgType ?? 'website';
+$ogLocale = $lang === 'sw' ? 'sw_TZ' : 'en_US';
+$ogLocaleAlt = $lang === 'sw' ? 'en_US' : 'sw_TZ';
 ?>
 <meta property="og:site_name" content="<?php echo e($siteName); ?>">
 <meta property="og:title" content="<?php echo e($pageTitle); ?>">
 <meta property="og:description" content="<?php echo e($ogDescription); ?>">
 <meta property="article:author" content="Robert Vajdik">
 <meta property="og:image" content="<?php echo e($ogImage); ?>">
+<meta property="og:image:width" content="<?php echo (int)$ogImageW; ?>">
+<meta property="og:image:height" content="<?php echo (int)$ogImageH; ?>">
+<meta property="og:image:alt" content="<?php echo e($ogImageAlt); ?>">
 <meta property="og:url" content="<?php echo e($canonical); ?>">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="<?php echo $lang === 'sw' ? 'sw_TZ' : 'en_US'; ?>">
+<meta property="og:type" content="<?php echo e($ogType); ?>">
+<meta property="og:locale" content="<?php echo e($ogLocale); ?>">
+<meta property="og:locale:alternate" content="<?php echo e($ogLocaleAlt); ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<?php echo e($pageTitle); ?>">
 <meta name="twitter:description" content="<?php echo e($ogDescription); ?>">
 <meta name="twitter:image" content="<?php echo e($ogImage); ?>">
+<meta name="twitter:image:alt" content="<?php echo e($ogImageAlt); ?>">
 
 <?php
 // ── JSON-LD: Organization + WebSite (rendered on every page) ──
@@ -131,7 +153,7 @@ $websiteJsonLd = [
 <header class="site-header">
   <div class="container header-inner">
     <a href="<?php echo SITE_URL; ?>/index.php" class="brand">
-      <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="<?php echo e($siteName); ?>">
+      <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="<?php echo e($siteName); ?>" width="500" height="500" decoding="async">
       <div class="brand-text">
         <span class="brand-name"><?php echo e($siteName); ?></span>
         <span class="brand-tag"><?php echo e(setting('site_tagline')); ?></span>

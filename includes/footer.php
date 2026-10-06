@@ -77,90 +77,16 @@ $nlError   = flash('newsletter_error');
 <script nonce="<?php echo e(csp_nonce()); ?>" src="<?php echo SITE_URL; ?>/assets/js/main.js"></script>
 <?php if (!empty($hasGallery) || !empty($hasLightbox)): ?>
 <script type="module" nonce="<?php echo e(csp_nonce()); ?>">
-import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js';
-const pswpModule = () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js');
+import { Fancybox } from 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.esm.js';
 
-// Standalone photo-zoom items (news heroes, team photos, any wrapped image).
-// One lightbox instance per gallery container; if items are direct children of body
-// (no container), they behave as independent single-image popups.
-if (document.querySelector('a.photo-zoom')) {
-  new PhotoSwipeLightbox({
-    gallery: 'body',
-    children: 'a.photo-zoom',
-    pswpModule,
-    showHideAnimationType: 'fade',
-    bgOpacity: 0.94,
-    loop: true,
-  }).init();
-}
-
-if (!document.querySelector('.gallery-grid')) { /* skip gallery init below */ } else {
-const lightbox = new PhotoSwipeLightbox({
-  gallery: '.gallery-grid',
-  // Function form so category filters that toggle display:none are respected.
-  children: (gallery) => Array.from(gallery.querySelectorAll('a.gallery-item')).filter(el => el.offsetParent !== null),
-  pswpModule,
-  showHideAnimationType: 'fade',
-  bgOpacity: 0.94,
-  loop: true,
+Fancybox.bind('[data-fancybox]', {
+  Hash: false,
+  Thumbs: { type: 'classic' },
+  Toolbar: {
+    display: { left: ['infobar'], middle: [], right: ['slideshow', 'fullscreen', 'thumbs', 'close'] },
+  },
+  Images: { zoom: true },
 });
-lightbox.on('uiRegister', () => {
-  // Caption bar (sits above the thumbnail strip)
-  lightbox.pswp.ui.registerElement({
-    name: 'caption',
-    order: 9,
-    isButton: false,
-    appendTo: 'root',
-    html: '',
-    onInit: (el, pswp) => {
-      pswp.on('change', () => {
-        const slideEl = pswp.currSlide.data.element;
-        const cap = slideEl ? slideEl.querySelector('.caption') : null;
-        el.innerHTML = cap ? cap.innerHTML : '';
-        el.style.display = cap ? 'block' : 'none';
-      });
-    }
-  });
-
-  // Bottom thumbnail filmstrip — click to jump, auto-scrolls to current slide
-  lightbox.pswp.ui.registerElement({
-    name: 'thumbs',
-    order: 10,
-    isButton: false,
-    appendTo: 'root',
-    html: '<div class="pswp-thumbs-inner"></div>',
-    onInit: (el, pswp) => {
-      const inner = el.querySelector('.pswp-thumbs-inner');
-      const n = pswp.getNumItems();
-      // Hide the strip entirely for single-image galleries
-      if (n <= 1) { el.style.display = 'none'; return; }
-      for (let i = 0; i < n; i++) {
-        const data = pswp.getItemData(i);
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'pswp-thumb';
-        btn.setAttribute('aria-label', 'Show image ' + (i + 1));
-        const img = document.createElement('img');
-        img.src = data.msrc || data.src;
-        img.alt = '';
-        img.loading = 'lazy';
-        btn.appendChild(img);
-        btn.addEventListener('click', () => pswp.goTo(i));
-        inner.appendChild(btn);
-      }
-      const highlight = () => {
-        const thumbs = inner.querySelectorAll('.pswp-thumb');
-        thumbs.forEach((b, i) => b.classList.toggle('is-current', i === pswp.currIndex));
-        const cur = inner.querySelector('.pswp-thumb.is-current');
-        if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
-      };
-      pswp.on('change', highlight);
-      highlight();
-    }
-  });
-});
-lightbox.init();
-}
 </script>
 <?php endif; ?>
 </body>

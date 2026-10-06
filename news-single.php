@@ -48,11 +48,11 @@ require __DIR__ . '/includes/header.php';
     <h1><?php echo e($post['title']); ?></h1>
     <div class="meta"><?php echo e(t('news.published_on')); ?> <?php echo e(format_date($post['created_at'])); ?></div>
   </div>
-  <?php if ($post['image']):
-      [$phw, $phh] = image_dimensions($post['image']); ?>
+  <?php if ($post['image']): ?>
     <div class="container-narrow">
       <a class="photo-zoom" href="<?php echo e(image_url($post['image'])); ?>"
-         data-pswp-width="<?php echo (int)$phw; ?>" data-pswp-height="<?php echo (int)$phh; ?>">
+         data-fancybox="post-<?php echo (int)$post['id']; ?>"
+         data-caption="<?php echo e($post['title']); ?>">
         <img src="<?php echo e(image_url($post['image'])); ?>" alt="" class="rounded-hero-img">
       </a>
     </div>

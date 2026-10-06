@@ -36,13 +36,12 @@ require __DIR__ . '/includes/header.php';
         </div>
       <?php endif; ?>
       <div class="gallery-grid" id="galleryGrid">
-        <?php foreach ($images as $g): [$gw, $gh] = image_dimensions($g['image']); ?>
+        <?php foreach ($images as $g): ?>
           <a href="<?php echo e(image_url($g['image'])); ?>"
              class="gallery-item"
-             data-pswp-width="<?php echo $gw; ?>"
-             data-pswp-height="<?php echo $gh; ?>"
-             data-category="<?php echo e($g['category'] ?: 'uncat'); ?>"
-             target="_blank" rel="noopener">
+             data-fancybox="gallery"
+             <?php if ($g['caption']): ?>data-caption="<?php echo e($g['caption']); ?>"<?php endif; ?>
+             data-category="<?php echo e($g['category'] ?: 'uncat'); ?>">
             <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
             <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
           </a>

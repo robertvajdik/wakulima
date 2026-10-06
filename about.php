@@ -31,7 +31,7 @@ require __DIR__ . '/includes/header.php';
     <div>
       <picture>
         <source type="image/webp" srcset="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima02.webp">
-        <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima02.jpg" alt="Wakulima" class="rounded-hero-img" width="1440" height="1920">
+        <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima02.jpg" alt="<?php echo current_lang() === 'sw' ? 'Wanachama wa Wakulima Maendeleo Group' : 'Members of Wakulima Maendeleo Group'; ?>" class="rounded-hero-img" width="1440" height="1920" decoding="async">
       </picture>
     </div>
   </div>
@@ -62,13 +62,13 @@ require __DIR__ . '/includes/header.php';
     <div class="team-grid">
       <?php foreach ($members as $m):
           $photoUrl = image_url($m['photo'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg');
-          $hasRealPhoto = !empty($m['photo']);
-          [$pmw, $pmh] = $hasRealPhoto ? image_dimensions($m['photo']) : [1200, 1200]; ?>
+          $hasRealPhoto = !empty($m['photo']); ?>
         <div class="team-card">
           <div class="photo">
             <?php if ($hasRealPhoto): ?>
               <a class="photo-zoom" href="<?php echo e($photoUrl); ?>"
-                 data-pswp-width="<?php echo (int)$pmw; ?>" data-pswp-height="<?php echo (int)$pmh; ?>"
+                 data-fancybox="member-<?php echo (int)$m['id']; ?>"
+                 data-caption="<?php echo e($m['full_name']); ?>"
                  aria-label="<?php echo e($m['full_name']); ?>">
                 <img src="<?php echo e($photoUrl); ?>" alt="<?php echo e($m['full_name']); ?>">
               </a>
