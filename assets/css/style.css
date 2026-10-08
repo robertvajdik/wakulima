@@ -445,6 +445,9 @@ textarea { min-height: 160px; resize: vertical; }
 .newsletter-msg-ok  { background: var(--green-100); color: var(--green-800); border: 1px solid var(--green-200); }
 .newsletter-msg-err { background: #FDE1E4; color: var(--red-700); border: 1px solid #F3B0B7; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 1000; padding: 10px 16px; border-radius: 10px; background: var(--green-800); color: #fff; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+.site-main:focus { outline: none; }
 @media (max-width: 860px) {
   .newsletter-inner { grid-template-columns: 1fr; }
   .newsletter-row { flex-direction: column; padding: 10px; border-radius: 16px; }

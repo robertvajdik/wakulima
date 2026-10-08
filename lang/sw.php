@@ -75,6 +75,8 @@ return [
     'footer.contact'     => 'Wasiliana',
     'footer.follow'      => 'Tufuate',
     'footer.rights'      => 'Haki zote zimehifadhiwa.',
+    'footer.partner'     => 'Kwa ushirikiano na',
+    'nav.skip'           => 'Ruka hadi maudhui',
 
     // News
     'news.published_on' => 'Imechapishwa',

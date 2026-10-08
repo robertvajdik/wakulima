@@ -5,7 +5,16 @@ DirectoryIndex index.php index.html
 ErrorDocument 404 /404.php
 
 # Deny access to sensitive files
-<FilesMatch "\.(sql|md|log|env|ini)$">
+<FilesMatch "\.(sql|md|log|env|ini|py|docx|txt|HEIC|heic|bak|json)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(robots\.txt)$">
+    Require all granted
+</FilesMatch>
+
+# One-off setup scripts — never reachable over HTTP. To run one in the
+# browser, temporarily remove its name from this list, then put it back.
+<FilesMatch "^(install|create-superadmin|gen-superadmin-sql)\.php$">
     Require all denied
 </FilesMatch>
 
@@ -15,7 +24,9 @@ ErrorDocument 404 /404.php
     Options -MultiViews
 
     # Deny direct access to includes / lang, and pretty-URL for sitemap.xml
-    RewriteRule ^(includes|lang)/ - [F,L]
+    RewriteRule ^(includes|lang|install)/ - [F,L]
+    RewriteRule ^assets/fotos/ - [F,L]
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
     RewriteRule ^admin/includes/ - [F,L]
 
     # Serve static sitemap.xml if present, otherwise fall through to sitemap.php

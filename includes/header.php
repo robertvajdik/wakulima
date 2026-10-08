@@ -103,8 +103,8 @@ $orgJsonLd = [
     'address' => [
         '@type' => 'PostalAddress',
         'streetAddress' => setting('contact_address'),
-        'addressLocality' => 'Mbeya',
-        'addressRegion' => 'Mbeya',
+        'addressLocality' => 'Mwanza',
+        'addressRegion' => 'Mwanza',
         'addressCountry' => 'TZ',
     ],
     'contactPoint' => [
@@ -150,6 +150,7 @@ $websiteJsonLd = [
 <?php endif; ?>
 </head>
 <body<?php echo !empty($bodyClass) ? ' class="' . e($bodyClass) . '"' : ''; ?>>
+<a class="skip-link" href="#main"><?php echo e(t('nav.skip', 'Skip to content')); ?></a>
 <header class="site-header">
   <div class="container header-inner">
     <a href="<?php echo SITE_URL; ?>/index.php" class="brand">
@@ -187,4 +188,4 @@ $websiteJsonLd = [
     </nav>
   </div>
 </header>
-<main class="site-main">
+<main class="site-main" id="main" tabindex="-1">

@@ -29,9 +29,9 @@ require __DIR__ . '/includes/header.php';
     <?php else: ?>
       <?php if ($categories): ?>
         <div class="gallery-filter">
-          <button class="active" data-filter="all"><?php echo e(t('gallery.all')); ?></button>
+          <button type="button" class="active" data-filter="all" aria-pressed="true"><?php echo e(t('gallery.all')); ?></button>
           <?php foreach ($categories as $c): ?>
-            <button data-filter="<?php echo e($c); ?>"><?php echo e($c); ?></button>
+            <button type="button" data-filter="<?php echo e($c); ?>" aria-pressed="false"><?php echo e($c); ?></button>
           <?php endforeach; ?>
         </div>
       <?php endif; ?>
@@ -42,7 +42,7 @@ require __DIR__ . '/includes/header.php';
              data-fancybox="gallery"
              <?php if ($g['caption']): ?>data-caption="<?php echo e($g['caption']); ?>"<?php endif; ?>
              data-category="<?php echo e($g['category'] ?: 'uncat'); ?>">
-            <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
+            <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy" decoding="async">
             <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
           </a>
         <?php endforeach; ?>

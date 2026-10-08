@@ -5,7 +5,7 @@ $pageDescription = t('meta.home.description');
 $pageKeywords    = t('meta.home.keywords');
 $bodyClass       = 'page-home';
 
-$posts = $pdo->query("SELECT id, title, slug, excerpt, image, created_at FROM posts WHERE status = 'published' ORDER BY created_at DESC LIMIT 3")->fetchAll();
+$posts = $pdo->query("SELECT id, title, slug, excerpt, body, image, created_at FROM posts WHERE status = 'published' ORDER BY created_at DESC LIMIT 3")->fetchAll();
 $programs = $pdo->query("SELECT id, title, slug, icon, summary FROM programs WHERE is_active = 1 ORDER BY sort_order ASC LIMIT 6")->fetchAll();
 $galleryPreview = $pdo->query("SELECT id, image, caption FROM gallery ORDER BY sort_order ASC, id DESC LIMIT 8")->fetchAll();
 
@@ -129,7 +129,7 @@ require __DIR__ . '/includes/header.php';
              class="gallery-item"
              data-fancybox="home"
              <?php if ($g['caption']): ?>data-caption="<?php echo e($g['caption']); ?>"<?php endif; ?>>
-            <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy">
+            <img src="<?php echo e(image_url($g['image'])); ?>" alt="<?php echo e($g['caption']); ?>" loading="lazy" decoding="async">
             <?php if ($g['caption']): ?><div class="caption"><?php echo e($g['caption']); ?></div><?php endif; ?>
           </a>
         <?php endforeach; ?>
@@ -142,15 +142,13 @@ require __DIR__ . '/includes/header.php';
              data-fancybox="home">
             <picture>
               <source type="image/webp" srcset="<?php echo e($thumb . '.webp'); ?>">
-              <img src="<?php echo e($thumb . '.jpg'); ?>" alt="Wakulima" loading="lazy">
+              <img src="<?php echo e($thumb . '.jpg'); ?>" alt="<?php echo current_lang() === 'sw' ? 'Wanachama wa Wakulima Maendeleo Group' : 'Members of Wakulima Maendeleo Group'; ?>" loading="lazy" decoding="async">
             </picture>
           </a>
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
-    <?php if ($galleryPreview): ?>
-      <p class="section-actions"><a href="gallery.php" class="btn btn-outline"><?php echo e(t('home.view_all')); ?> →</a></p>
-    <?php endif; ?>
+    <p class="section-actions"><a href="gallery.php" class="btn btn-outline"><?php echo e(t('home.view_all')); ?> →</a></p>
   </div>
 </section>
 
@@ -178,7 +176,7 @@ require __DIR__ . '/includes/header.php';
       <div class="card-grid">
         <?php foreach ($posts as $p): ?>
           <a class="card" href="news-single.php?slug=<?php echo urlencode($p['slug']); ?>">
-            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt=""></div>
+            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt="" loading="lazy" decoding="async"></div>
             <div class="body">
               <div class="meta"><?php echo e(format_date($p['created_at'])); ?></div>
               <h3><?php echo e($p['title']); ?></h3>
@@ -189,7 +187,9 @@ require __DIR__ . '/includes/header.php';
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
-    <p class="section-actions"><a href="<?php echo SITE_URL; ?>/admin/index.php" class="btn btn-outline" rel="nofollow"><?php echo current_lang() === 'sw' ? 'Ingia (Admin)' : 'Admin login'; ?></a></p>
+    <?php if ($posts): ?>
+      <p class="section-actions"><a href="news.php" class="btn btn-outline"><?php echo e(t('home.view_all')); ?> →</a></p>
+    <?php endif; ?>
   </div>
 </section>
 

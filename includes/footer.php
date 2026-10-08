@@ -34,7 +34,7 @@ $nlError   = flash('newsletter_error');
   <div class="container footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="">
+        <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="" width="500" height="500" loading="lazy" decoding="async">
         <span><?php echo e(setting('site_name')); ?></span>
       </div>
       <p><?php echo e(t('footer.about_short')); ?></p>
@@ -47,14 +47,15 @@ $nlError   = flash('newsletter_error');
         <li><a href="<?php echo SITE_URL; ?>/programs.php"><?php echo e(t('nav.programs')); ?></a></li>
         <li><a href="<?php echo SITE_URL; ?>/news.php"><?php echo e(t('nav.news')); ?></a></li>
         <li><a href="<?php echo SITE_URL; ?>/gallery.php"><?php echo e(t('nav.gallery')); ?></a></li>
+        <li><a href="<?php echo SITE_URL; ?>/contact.php"><?php echo e(t('nav.contact')); ?></a></li>
       </ul>
     </div>
     <div>
       <h4><?php echo e(t('footer.contact')); ?></h4>
       <ul class="footer-links">
-        <li><?php echo e(setting('contact_address')); ?></li>
-        <li><?php echo safe_email(setting('contact_email')); ?></li>
-        <li><a href="tel:<?php echo e(setting('contact_phone')); ?>"><?php echo e(setting('contact_phone')); ?></a></li>
+        <?php if (setting('contact_address')): ?><li><?php echo nl2br(e(setting('contact_address'))); ?></li><?php endif; ?>
+        <?php if (setting('contact_email')): ?><li><?php echo safe_email(setting('contact_email')); ?></li><?php endif; ?>
+        <?php if (setting('contact_phone')): ?><li><a href="tel:<?php echo e(preg_replace('/[^\d+]/', '', setting('contact_phone'))); ?>"><?php echo e(setting('contact_phone')); ?></a></li><?php endif; ?>
       </ul>
     </div>
     <div>
@@ -69,7 +70,7 @@ $nlError   = flash('newsletter_error');
   <div class="footer-bottom container">
     <div><a href="<?php echo SITE_URL; ?>/admin/index.php" class="admin-dot" aria-label="Admin" rel="nofollow">&copy;</a> <?php echo date('Y'); ?> <?php echo e(setting('site_name')); ?>. <?php echo e(t('footer.rights')); ?></div>
     <div class="partner">
-      <span>In partnership with</span>
+      <span><?php echo e(t('footer.partner', 'In partnership with')); ?></span>
       <a href="https://maendeleo.cz/" target="_blank" rel="noopener">Nadace Maendeleo — maendeleo.cz</a>
     </div>
   </div>

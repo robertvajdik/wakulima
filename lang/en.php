@@ -75,6 +75,8 @@ return [
     'footer.contact'     => 'Contact',
     'footer.follow'      => 'Follow Us',
     'footer.rights'      => 'All rights reserved.',
+    'footer.partner'     => 'In partnership with',
+    'nav.skip'           => 'Skip to content',
 
     // News
     'news.published_on' => 'Published on',

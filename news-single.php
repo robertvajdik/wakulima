@@ -53,7 +53,8 @@ require __DIR__ . '/includes/header.php';
       <a class="photo-zoom" href="<?php echo e(image_url($post['image'])); ?>"
          data-fancybox="post-<?php echo (int)$post['id']; ?>"
          data-caption="<?php echo e($post['title']); ?>">
-        <img src="<?php echo e(image_url($post['image'])); ?>" alt="" class="rounded-hero-img">
+        <?php [$pw, $ph] = image_dimensions($post['image']); ?>
+        <img src="<?php echo e(image_url($post['image'])); ?>" alt="<?php echo e($post['title']); ?>" class="rounded-hero-img" width="<?php echo (int)$pw; ?>" height="<?php echo (int)$ph; ?>" decoding="async">
       </a>
     </div>
   <?php endif; ?>

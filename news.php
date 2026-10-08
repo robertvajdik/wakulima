@@ -3,7 +3,7 @@ require_once __DIR__ . '/includes/functions.php';
 $pageTitle = t('nav.news');
 $pageDescription = t('meta.news.description');
 $pageKeywords    = t('meta.news.keywords');
-$posts = $pdo->query("SELECT id, title, slug, excerpt, image, created_at FROM posts WHERE status = 'published' ORDER BY created_at DESC")->fetchAll();
+$posts = $pdo->query("SELECT id, title, slug, excerpt, body, image, created_at FROM posts WHERE status = 'published' ORDER BY created_at DESC")->fetchAll();
 require __DIR__ . '/includes/header.php';
 ?>
 <section class="page-hero">
@@ -20,7 +20,7 @@ require __DIR__ . '/includes/header.php';
       <div class="card-grid">
         <?php foreach ($posts as $p): ?>
           <a class="card" href="news-single.php?slug=<?php echo urlencode($p['slug']); ?>">
-            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt=""></div>
+            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt="" loading="lazy" decoding="async"></div>
             <div class="body">
               <div class="meta"><?php echo e(format_date($p['created_at'])); ?></div>
               <h3><?php echo e($p['title']); ?></h3>

@@ -35,8 +35,10 @@
         filterBar.addEventListener('click', (e) => {
             const btn = e.target.closest('button');
             if (!btn) return;
-            filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            filterBar.querySelectorAll('button').forEach(b => {
+                b.classList.toggle('active', b === btn);
+                b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+            });
             const f = btn.dataset.filter;
             grid.querySelectorAll('.gallery-item').forEach(item => {
                 item.style.display = (f === 'all' || item.dataset.category === f) ? '' : 'none';
