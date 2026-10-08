@@ -1,6 +1,6 @@
-# Wakulima Maendeleo Group — Website
+# Malezi na Watoto — Website
 
-A full PHP / MySQL website with an admin panel for **Wakulima Maendeleo Group** (Wakulima Agri-Food Company Ltd, Mwanza, Tanzania) — a community-based farmers' foundation. Bilingual (English + Kiswahili) with a Tanzania-flag inspired palette.
+A full PHP / MySQL website with an admin panel for **Malezi na Watoto** (Wakulima Agri-Food Company Ltd, Mwanza, Tanzania) — a community-based organization improving the well-being, development, and future of young children and their families. Bilingual (English + Kiswahili) with a Tanzania-flag inspired palette.
 
 Partner: [Nadace Maendeleo (maendeleo.cz)](https://maendeleo.cz/) — linked from the site footer.
 

@@ -1,5 +1,5 @@
 <?php
-// Wakulima Maendeleo Group — one-off superadmin creator.
+// Malezi na Watoto — one-off superadmin creator.
 // Run once, then DELETE this file.
 
 require_once __DIR__ . '/includes/config.php';
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Create Superadmin — Wakulima</title>
+<title>Create Superadmin — Malezi na Watoto</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>

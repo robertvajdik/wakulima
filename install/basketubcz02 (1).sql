@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: irene.ch.inthin
--- Erstellungszeit: 28. Sep 2026 um 09:14
+-- Erstellungszeit: 08. Okt 2026 um 23:33
 -- Server-Version: 11.8.6-MariaDB-0+deb13u1 from Debian-log
 -- PHP-Version: 8.2.33
 
@@ -42,9 +42,14 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `title`, `caption`, `image`, `category`, `sort_order`, `created_at`) VALUES
-(1, NULL, NULL, 'gallery/6eeecda423a5fb48.jpg', 'farming', 0, '2026-09-28 08:58:41'),
-(2, NULL, NULL, 'gallery/f9e6fd7bbbd4c67e.jpg', 'farming', 0, '2026-09-28 08:58:41'),
-(3, NULL, NULL, 'gallery/c4d8ebac0d9a5a82.jpg', 'farming', 0, '2026-09-28 08:58:41');
+(4, NULL, NULL, 'gallery/da4d62d71f8de5a9.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(6, NULL, NULL, 'gallery/b8759b47332d39a4.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(7, NULL, NULL, 'gallery/a1a94bac3172e04e.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(8, NULL, NULL, 'gallery/10faea8a4cc03dde.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(9, NULL, NULL, 'gallery/5a7d9515fec8dd14.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(10, NULL, NULL, 'gallery/93cebcf57af4ab0c.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(11, NULL, NULL, 'gallery/4fe2018eaa65d2c9.jpg', NULL, 0, '2026-10-07 00:11:33'),
+(12, NULL, NULL, 'gallery/567fd20a843511e4.jpg', NULL, 0, '2026-10-07 00:11:33');
 
 -- --------------------------------------------------------
 
@@ -274,7 +279,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `members`

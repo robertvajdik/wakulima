@@ -11,14 +11,14 @@ $cspNonce = csp_nonce();
 $lang = current_lang();
 $altLang = $lang === 'sw' ? 'en' : 'sw';
 if (!headers_sent()) header('Content-Language: ' . $lang);
-$pageTitle = $pageTitle ?? setting('site_name', 'Wakulima Maendeleo Group');
-$siteName = setting('site_name', 'Wakulima Maendeleo Group');
+$pageTitle = $pageTitle ?? setting('site_name', 'Malezi na Watoto');
+$siteName = setting('site_name', 'Malezi na Watoto');
 ?><!doctype html>
 <html lang="<?php echo e($lang); ?>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0C0C0C">
+<meta name="theme-color" content="#52279B">
 <title><?php echo e($pageTitle . ' — ' . $siteName); ?></title>
 <?php
 $metaDescription = $pageDescription ?? t('meta.site.description', setting('site_tagline'));
@@ -35,8 +35,8 @@ $metaKeywords    = $pageKeywords    ?? t('meta.site.keywords', '');
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<link rel="icon" type="image/jpeg" href="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg">
-<link rel="apple-touch-icon" href="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg">
+<link rel="icon" type="image/png" href="<?php echo SITE_URL; ?>/assets/images/favicon.png">
+<link rel="apple-touch-icon" href="<?php echo SITE_URL; ?>/assets/images/apple-touch-icon.png">
 <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css">
 <?php if (!empty($hasGallery) || !empty($hasLightbox)): ?>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -98,7 +98,7 @@ $orgJsonLd = [
     '@type' => 'NGO',
     'name' => $siteName,
     'url' => SITE_URL,
-    'logo' => SITE_URL . '/assets/images/wakulima_logo_bw.jpeg',
+    'logo' => SITE_URL . '/assets/images/watoto_logo.jpeg',
     'description' => setting('site_tagline'),
     'address' => [
         '@type' => 'PostalAddress',
@@ -154,7 +154,7 @@ $websiteJsonLd = [
 <header class="site-header">
   <div class="container header-inner">
     <a href="<?php echo SITE_URL; ?>/index.php" class="brand">
-      <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="<?php echo e($siteName); ?>" width="500" height="500" decoding="async">
+      <img src="<?php echo SITE_URL; ?>/assets/images/watoto_mark.jpg" alt="<?php echo e($siteName); ?>" width="256" height="256" decoding="async">
       <div class="brand-text">
         <span class="brand-name"><?php echo e($siteName); ?></span>
         <span class="brand-tag"><?php echo e(setting('site_tagline')); ?></span>

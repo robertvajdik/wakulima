@@ -27,6 +27,7 @@ $hasGallery = true;
 $icons = [
     'leaf' => '🌱', 'users' => '🤝', 'coins' => '💰', 'book' => '📖',
     'wheat' => '🌾', 'home' => '🏡', 'sun' => '☀️', 'water' => '💧',
+    'child' => '🧒', 'heart' => '💛', 'family' => '👪', 'puzzle' => '🧩',
 ];
 
 require __DIR__ . '/includes/header.php';
@@ -47,12 +48,12 @@ require __DIR__ . '/includes/header.php';
       <div class="frame">
         <picture>
           <source type="image/webp" srcset="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.webp">
-          <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.jpg" alt="<?php echo current_lang() === 'sw' ? 'Wakulima wa Tanzania shambani' : 'Tanzanian farmers at work in the fields'; ?>" width="1440" height="1920" fetchpriority="high" decoding="async">
+          <img src="<?php echo SITE_URL; ?>/assets/images/fotos/full/wakulima01.jpg" alt="<?php echo current_lang() === 'sw' ? 'Wazazi na watoto wakijifunza pamoja' : 'Parents and children learning together'; ?>" width="1440" height="1920" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="tag">
         <span class="dot"></span>
-        <span><?php echo current_lang() === 'sw' ? 'Wakulima wa Afrika' : 'Farmers of Africa'; ?></span>
+        <span><?php echo current_lang() === 'sw' ? 'Malezi chanya' : 'Positive parenting'; ?></span>
       </div>
     </div>
   </div>
@@ -62,7 +63,7 @@ require __DIR__ . '/includes/header.php';
   <div class="container two-col">
     <div>
       <span class="eyebrow"><?php echo e(t('section.who_we_are')); ?></span>
-      <h2><?php echo current_lang() === 'sw' ? 'Jamii ya wakulima inayojenga mustakabali imara.' : 'A community of farmers building resilient futures together.'; ?></h2>
+      <h2><?php echo current_lang() === 'sw' ? 'Kila mtoto apate nafasi ya kustawi.' : 'Helping every child reach their full potential.'; ?></h2>
       <p><?php echo e(setting('about_text', t('home.about_lead'))); ?></p>
       <a href="about.php" class="btn"><?php echo e(t('home.learn_more')); ?></a>
     </div>
@@ -87,12 +88,12 @@ require __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><?php echo e(t('section.programs')); ?></span>
-      <h2><?php echo current_lang() === 'sw' ? 'Njia zetu za kuwawezesha wakulima.' : 'How we empower farming communities.'; ?></h2>
+      <h2><?php echo current_lang() === 'sw' ? 'Jinsi tunavyosaidia watoto na familia.' : 'How we support children and families.'; ?></h2>
     </div>
     <div class="program-grid">
       <?php foreach ($programs as $p): ?>
         <div class="program-card">
-          <div class="icon"><?php echo $icons[$p['icon']] ?? '🌾'; ?></div>
+          <div class="icon"><?php echo $icons[$p['icon']] ?? '🌱'; ?></div>
           <h3><?php echo e($p['title']); ?></h3>
           <p><?php echo e($p['summary']); ?></p>
         </div>
@@ -142,7 +143,7 @@ require __DIR__ . '/includes/header.php';
              data-fancybox="home">
             <picture>
               <source type="image/webp" srcset="<?php echo e($thumb . '.webp'); ?>">
-              <img src="<?php echo e($thumb . '.jpg'); ?>" alt="<?php echo current_lang() === 'sw' ? 'Wanachama wa Wakulima Maendeleo Group' : 'Members of Wakulima Maendeleo Group'; ?>" loading="lazy" decoding="async">
+              <img src="<?php echo e($thumb . '.jpg'); ?>" alt="<?php echo current_lang() === 'sw' ? 'Wanachama wa Malezi na Watoto' : 'Members of Malezi na Watoto'; ?>" loading="lazy" decoding="async">
             </picture>
           </a>
         <?php endforeach; ?>
@@ -155,8 +156,8 @@ require __DIR__ . '/includes/header.php';
 <section class="join-band">
   <div class="container">
     <span class="eyebrow"><?php echo current_lang() === 'sw' ? 'Jiunge nasi' : 'Get involved'; ?></span>
-    <h2><?php echo current_lang() === 'sw' ? 'Wakulima wanapofanya kazi pamoja, jamii nzima hufaidika.' : 'When farmers work together, whole communities thrive.'; ?></h2>
-    <p class="lead"><?php echo current_lang() === 'sw' ? 'Shirikiana nasi kama mkulima, mshirika au mfadhili — na tuchangie kujenga mustakabali imara wa kilimo Tanzania.' : 'Partner with us as a farmer, collaborator or supporter — and help build a stronger future for Tanzanian agriculture.'; ?></p>
+    <h2><?php echo current_lang() === 'sw' ? 'Watoto wanapostawi, jamii nzima hustawi.' : 'When children thrive, whole communities thrive.'; ?></h2>
+    <p class="lead"><?php echo current_lang() === 'sw' ? 'Shirikiana nasi kama mzazi, mlezi, mshirika au mfadhili — na tuchangie kujenga mustakabali bora kwa watoto wa Tanzania.' : 'Partner with us as a parent, caregiver, collaborator or supporter — and help build a brighter future for Tanzania’s children.'; ?></p>
     <div class="hero-actions">
       <a href="contact.php" class="btn"><?php echo current_lang() === 'sw' ? 'Wasiliana nasi' : 'Get in touch'; ?></a>
       <a href="what-we-do.php" class="btn btn-outline"><?php echo e(t('home.learn_more')); ?></a>
@@ -168,7 +169,7 @@ require __DIR__ . '/includes/header.php';
   <div class="container">
     <div class="section-head">
       <span class="eyebrow"><?php echo e(t('section.latest_news')); ?></span>
-      <h2><?php echo current_lang() === 'sw' ? 'Habari kutoka shambani.' : 'News from the field.'; ?></h2>
+      <h2><?php echo current_lang() === 'sw' ? 'Habari kutoka kwenye jamii.' : 'News from the community.'; ?></h2>
     </div>
     <?php if (!$posts): ?>
       <p><?php echo e(t('news.no_posts')); ?></p>
@@ -176,7 +177,7 @@ require __DIR__ . '/includes/header.php';
       <div class="card-grid">
         <?php foreach ($posts as $p): ?>
           <a class="card" href="news-single.php?slug=<?php echo urlencode($p['slug']); ?>">
-            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt="" loading="lazy" decoding="async"></div>
+            <div class="thumb"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/watoto_mark.jpg')); ?>" alt="" loading="lazy" decoding="async"></div>
             <div class="body">
               <div class="meta"><?php echo e(format_date($p['created_at'])); ?></div>
               <h3><?php echo e($p['title']); ?></h3>

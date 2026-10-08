@@ -9,7 +9,7 @@ $nlError   = flash('newsletter_error');
     <div class="newsletter-copy">
       <span class="eyebrow"><?php echo e(t('newsletter.eyebrow', 'Newsletter')); ?></span>
       <h2><?php echo e(t('newsletter.title', 'Stay in the loop.')); ?></h2>
-      <p><?php echo e(t('newsletter.lead', 'Get occasional updates on our programs, harvests, and community stories. No spam — ever.')); ?></p>
+      <p><?php echo e(t('newsletter.lead', 'Get occasional updates on our programs, parenting sessions, and community stories. No spam — ever.')); ?></p>
     </div>
     <form class="newsletter-form" method="post" action="<?php echo SITE_URL; ?>/newsletter-subscribe.php" novalidate>
       <?php echo csrf_field(); ?>
@@ -34,7 +34,7 @@ $nlError   = flash('newsletter_error');
   <div class="container footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="" width="500" height="500" loading="lazy" decoding="async">
+        <img src="<?php echo SITE_URL; ?>/assets/images/watoto_mark.jpg" alt="" width="256" height="256" loading="lazy" decoding="async">
         <span><?php echo e(setting('site_name')); ?></span>
       </div>
       <p><?php echo e(t('footer.about_short')); ?></p>

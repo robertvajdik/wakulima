@@ -17,11 +17,11 @@ return [
     'nav.close_menu'   => 'Close menu',
 
     // Hero
-    'hero.eyebrow'     => 'Community Farmers Foundation · Africa',
-    'hero.title'       => 'Empowering farmers, transforming communities.',
-    'hero.subtitle'    => 'A community-based farmers’ foundation building resilient rural livelihoods through collective action, sustainable agriculture, savings, and knowledge sharing.',
+    'hero.eyebrow'     => 'Parenting & Early Childhood · Tanzania',
+    'hero.title'       => 'Every child deserves to learn, grow, and thrive.',
+    'hero.subtitle'    => 'We work with parents, caregivers, and communities to promote positive parenting, early childhood development, and supportive environments for young children.',
     'hero.cta_primary' => 'Discover our programs',
-    'hero.cta_secondary' => 'Meet our farmers',
+    'hero.cta_secondary' => 'Who we are',
 
     // Sections
     'section.who_we_are'   => 'Who We Are',
@@ -36,25 +36,24 @@ return [
     'section.our_impact'   => 'Our Impact',
 
     // Home / general text
-    'home.about_lead'  => 'Wakulima Maendeleo Group is a community-based farmers’ foundation committed to empowering smallholder farmers across Africa through collective action, sustainable agriculture, financial inclusion, and community development.',
+    'home.about_lead'  => 'Malezi na Watoto is a community-based organization committed to improving the well-being, development, and future of young children and their families.',
     'home.read_more'   => 'Read more',
     'home.view_all'    => 'View all',
     'home.learn_more'  => 'Learn more',
 
     // Stats
-    'stats.farmers'      => 'Farmers reached',
+    'stats.farmers'      => 'Children & families reached',
     'stats.communities'  => 'Communities served',
     'stats.programs'     => 'Active programs',
     'stats.years'        => 'Years of impact',
 
     // What we do items
-    'wwd.item1' => 'Promote sustainable and productive farming practices.',
-    'wwd.item2' => 'Mobilize farmers to work together through collective action.',
-    'wwd.item3' => 'Support savings, lending, and financial empowerment.',
-    'wwd.item4' => 'Facilitate knowledge and experience sharing among farmers.',
-    'wwd.item5' => 'Promote food security and improved household livelihoods.',
-    'wwd.item6' => 'Connect farmers with development opportunities and stakeholders.',
-    'wwd.item7' => 'Support community initiatives that contribute to long-term rural development.',
+    'wwd.item1' => 'Promote positive parenting and responsive caregiving.',
+    'wwd.item2' => 'Support early childhood development and learning.',
+    'wwd.item3' => 'Conduct Dialogic Booksharing and child-centered learning activities.',
+    'wwd.item4' => 'Empower parents and caregivers with practical parenting knowledge.',
+    'wwd.item5' => 'Mobilize communities to support children’s well-being.',
+    'wwd.item6' => 'Collaborate with local stakeholders to create sustainable solutions for children and families.',
 
     // Contact form
     'contact.name'    => 'Your name',
@@ -70,7 +69,7 @@ return [
     'contact.email_label' => 'Email',
 
     // Footer
-    'footer.about_short' => 'A community-based farmers’ foundation committed to empowering smallholder farmers across Africa.',
+    'footer.about_short' => 'A community-based organization improving the well-being, development, and future of young children and their families.',
     'footer.quick_links' => 'Quick Links',
     'footer.contact'     => 'Contact',
     'footer.follow'      => 'Follow Us',
@@ -90,7 +89,7 @@ return [
     // Newsletter
     'newsletter.eyebrow'      => 'Newsletter',
     'newsletter.title'        => 'Stay in the loop.',
-    'newsletter.lead'         => 'Get occasional updates on our programs, harvests, and community stories. No spam — ever.',
+    'newsletter.lead'         => 'Get occasional updates on our programs, parenting sessions, and community stories. No spam — ever.',
     'newsletter.email_label'  => 'Email address',
     'newsletter.placeholder'  => 'you@example.com',
     'newsletter.subscribe'    => 'Subscribe',
@@ -109,27 +108,27 @@ return [
     'go_home'           => 'Go to homepage',
 
     // ── SEO meta (title/description/keywords) ──
-    'meta.site.description'      => 'Wakulima Maendeleo Group empowers Tanzanian smallholder farmers through collective action, sustainable agriculture, savings, and knowledge sharing. Based in Mwanza, Tanzania.',
-    'meta.site.keywords'         => 'Wakulima Maendeleo, smallholder farmers Tanzania, sustainable agriculture, collective action, table banking, community development, Mwanza, NGO Tanzania',
+    'meta.site.description'      => 'Malezi na Watoto is a community-based organization in Tanzania promoting positive parenting, early childhood development, and the well-being of young children and their families.',
+    'meta.site.keywords'         => 'Malezi na Watoto, positive parenting, early childhood development, Dialogic Booksharing, caregivers, child well-being, community organization, Tanzania',
 
-    'meta.home.description'      => 'Wakulima Maendeleo Group empowers Tanzanian smallholder farmers through collective action, sustainable agriculture, savings, and knowledge sharing. Based in Mwanza, Tanzania.',
-    'meta.home.keywords'         => 'Wakulima Maendeleo, smallholder farmers Tanzania, sustainable agriculture, collective action, table banking, community development, Mwanza, NGO Tanzania',
+    'meta.home.description'      => 'Malezi na Watoto is a community-based organization in Tanzania promoting positive parenting, early childhood development, and the well-being of young children and their families.',
+    'meta.home.keywords'         => 'Malezi na Watoto, positive parenting, early childhood development, Dialogic Booksharing, caregivers, child well-being, community organization, Tanzania',
 
-    'meta.about.description'     => 'Meet Wakulima Maendeleo Group — a community-based farmers foundation in Mwanza, Tanzania. Learn our mission, vision, and team.',
-    'meta.about.keywords'        => 'about Wakulima, farmers group Tanzania, community farming, Mwanza farmers foundation, farmer team, NGO Tanzania',
+    'meta.about.description'     => 'Meet Malezi na Watoto — a community-based organization supporting young children, parents, and caregivers in Tanzania. Learn our vision, mission, and team.',
+    'meta.about.keywords'        => 'about Malezi na Watoto, early childhood organization Tanzania, parenting support, caregivers, child development, community organization',
 
-    'meta.what_we_do.description'=> 'Sustainable farming, collective action, savings & lending, knowledge sharing — see how Wakulima Maendeleo Group works with smallholder farmers every day.',
-    'meta.what_we_do.keywords'   => 'what we do, sustainable farming Tanzania, collective action, savings and lending, community farming, farmer training',
+    'meta.what_we_do.description'=> 'Positive parenting, early childhood development, Dialogic Booksharing, and community mobilization — see how Malezi na Watoto supports children and families.',
+    'meta.what_we_do.keywords'   => 'what we do, positive parenting, responsive caregiving, early childhood development, Dialogic Booksharing, child-centered learning',
 
-    'meta.programs.description'  => 'Explore our farmer-focused programs: sustainable farming, table-banking, food security, community development, and knowledge sharing.',
-    'meta.programs.keywords'     => 'farmer programs, sustainable farming, table banking, savings and lending, food security, community development Tanzania',
+    'meta.programs.description'  => 'Explore our programs: positive parenting, early childhood development, Dialogic Booksharing, parent empowerment, and community engagement for children.',
+    'meta.programs.keywords'     => 'parenting programs, early childhood development, Dialogic Booksharing, caregiver support, child-centered learning, community engagement Tanzania',
 
-    'meta.news.description'      => 'News and stories from Wakulima Maendeleo Group — updates on our farmers, workshops, harvests, and community projects.',
-    'meta.news.keywords'         => 'farmers news, community stories, Wakulima updates, Tanzania farming news, harvest stories',
+    'meta.news.description'      => 'News and stories from Malezi na Watoto — updates on our parenting sessions, learning activities, and community work for children and families.',
+    'meta.news.keywords'         => 'parenting news, early childhood stories, Malezi na Watoto updates, community stories, Tanzania children',
 
-    'meta.gallery.description'   => 'Photos from our farms, workshops, and community events at Wakulima Maendeleo Group in Mwanza, Tanzania.',
-    'meta.gallery.keywords'      => 'farmers photos, community gallery, Wakulima events, Tanzania farming pictures, Mwanza farm photos',
+    'meta.gallery.description'   => 'Photos from our parenting sessions, booksharing, learning activities, and community events at Malezi na Watoto, Tanzania.',
+    'meta.gallery.keywords'      => 'parenting sessions photos, Dialogic Booksharing, early learning, community gallery, Malezi na Watoto events',
 
-    'meta.contact.description'   => 'Get in touch with Wakulima Maendeleo Group. Reach us in Mwanza, Tanzania — call, email, or send a message.',
-    'meta.contact.keywords'      => 'contact Wakulima, farmers Tanzania contact, NGO contact Mwanza, farmer group phone email',
+    'meta.contact.description'   => 'Get in touch with Malezi na Watoto. Reach us in Mwanza, Tanzania — call, email, or send a message.',
+    'meta.contact.keywords'      => 'contact Malezi na Watoto, parenting support Tanzania, early childhood organization contact, phone, email',
 ];

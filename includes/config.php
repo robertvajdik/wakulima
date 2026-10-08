@@ -1,11 +1,11 @@
 <?php
-// Wakulima Maendeleo Group — application config
+// Malezi na Watoto — application config
 
 // Database
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'basketubcz02');
-define('DB_USER', 'basketubcz003');
-define('DB_PASS', 'PCbrqoAf');
+define('DB_NAME', 'basketubcz03');
+define('DB_USER', 'basketubcz004');
+define('DB_PASS', 'VKhpl8Ne');
 define('DB_CHARSET', 'utf8mb4');
 
 // Site

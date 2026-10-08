@@ -39,7 +39,7 @@ $posts = $pdo->query("SELECT id, title, slug, status, created_at, image FROM pos
         <tbody>
         <?php foreach ($posts as $p): ?>
           <tr>
-            <td class="col-thumb" data-label="Image"><div class="thumb-mini"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt=""></div></td>
+            <td class="col-thumb" data-label="Image"><div class="thumb-mini"><img src="<?php echo e(image_url($p['image'], SITE_URL . '/assets/images/watoto_mark.jpg')); ?>" alt=""></div></td>
             <td data-label="Title"><a href="post-edit.php?id=<?php echo $p['id']; ?>"><?php echo e($p['title']); ?></a>
                 <div class="row-sub"><?php echo e($p['slug']); ?></div></td>
             <td data-label="Status"><span class="badge <?php echo $p['status']; ?>"><?php echo e($p['status']); ?></span></td>

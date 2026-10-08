@@ -1,5 +1,5 @@
 <?php
-// Wakulima Maendeleo Group — installer
+// Malezi na Watoto — installer
 // Creates the database schema and a default admin user.
 // After running, DELETE this file.
 
@@ -43,20 +43,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $count = (int)$pdo->query("SELECT COUNT(*) FROM programs")->fetchColumn();
             if ($count === 0) {
                 $programs = [
-                    ['Sustainable Farming', 'sustainable-farming', 'leaf', 'Promoting productive and eco-friendly agriculture practices.', 'We train farmers on climate-smart, sustainable methods that increase yields while protecting soil and water.'],
-                    ['Collective Action', 'collective-action', 'users', 'Bringing farmers together for shared strength and better bargaining.', 'Members combine effort and voice to access markets, negotiate prices, and unlock opportunities that individuals cannot.'],
-                    ['Savings & Lending', 'savings-lending', 'coins', 'Financial empowerment through table-banking and group savings.', 'A community-run savings and loan facility that builds resilience and funds farm investments.'],
-                    ['Knowledge Sharing', 'knowledge-sharing', 'book', 'Farmer-to-farmer learning and expert-led training sessions.', 'We host regular workshops, field days, and mentoring for continuous improvement.'],
-                    ['Food Security', 'food-security', 'wheat', 'Improving household nutrition and long-term food resilience.', 'Kitchen gardens, storage solutions, and diversified cropping to keep families food-secure year-round.'],
-                    ['Community Development', 'community-development', 'home', 'Long-term rural development initiatives led by community members.', 'From clean-water projects to youth mentorship, we invest in what our communities need most.'],
+                    ['Positive Parenting', 'positive-parenting', 'heart', 'Promoting positive parenting and responsive caregiving.', 'Parenting sessions that help parents and caregivers build warm, responsive relationships and respond to their children’s needs with care and confidence.'],
+                    ['Early Childhood Development', 'early-childhood-development', 'child', 'Supporting early childhood development and learning.', 'We help families give young children the care, protection, and stimulation they need in their earliest years to reach their full potential.'],
+                    ['Dialogic Booksharing', 'dialogic-booksharing', 'book', 'Sharing books through conversation to build language and connection.', 'Parents and caregivers learn to share picture books interactively — pointing, asking, and talking together — so children grow in language, attention, and confidence.'],
+                    ['Child-Centered Learning', 'child-centered-learning', 'puzzle', 'Learning activities where children explore, communicate, and discover.', 'Play-based, child-centered activities that encourage children to explore, communicate, learn, and develop with confidence.'],
+                    ['Parent & Caregiver Empowerment', 'parent-caregiver-empowerment', 'family', 'Practical parenting knowledge and skills for families.', 'We equip parents and caregivers with practical knowledge, skills, and opportunities that strengthen children’s development and family well-being.'],
+                    ['Community Engagement', 'community-engagement', 'users', 'Mobilizing communities and stakeholders for children’s well-being.', 'Working with community members and local stakeholders to create sustainable solutions and supportive environments for children and families.'],
                 ];
                 $ins = $pdo->prepare("INSERT INTO programs (title, slug, icon, summary, body, sort_order) VALUES (?, ?, ?, ?, ?, ?)");
                 foreach ($programs as $i => $p) { $ins->execute([$p[0], $p[1], $p[2], $p[3], $p[4], $i]); }
 
                 $posts = [
-                    ['Welcome to Wakulima Maendeleo Group', 'Community farmers unite to build resilient livelihoods.', "We are proud to launch our new home online — a hub for our members, partners, and friends. Explore our programs, meet the team, and see how we are helping smallholder farmers thrive.\n\nJoin us in our mission to empower rural communities through knowledge, collective action, and sustainable practices."],
-                    ['Table-banking success stories', 'Members share how group savings changed their farms and homes.', "This season, more than forty families invested loans from our savings pool in seeds, fertilizer, and small livestock. The returns are already changing lives — school fees paid on time, better meals on the table, and confidence to plan for the future."],
-                    ['Sustainable farming workshop recap', 'A day of learning, sharing, and planting for the future.', "Last Saturday, over eighty farmers gathered under the mango tree at the community centre to learn about soil health, crop rotation, and water-smart irrigation. Thank you to every trainer and every farmer who showed up ready to learn."],
+                    ['Welcome to Malezi na Watoto', 'Supporting young children and their families to learn, grow, and thrive.', "We are proud to launch our new home online — a hub for parents, caregivers, partners, and friends. Explore our programs, meet the team, and see how we are supporting young children and their families.\n\nJoin us in our mission to empower parents, caregivers, and communities with knowledge and practical opportunities that promote positive parenting and early childhood development."],
+                    ['Dialogic Booksharing sessions', 'Parents discover how sharing a picture book can open a world of conversation.', "This season, parents and caregivers joined our Dialogic Booksharing sessions to learn how to share books interactively with their young children — pointing at pictures, asking questions, and following the child’s lead. Families tell us their children are talking more, listening longer, and asking for books every day."],
+                    ['Positive parenting workshop recap', 'A day of learning and sharing for parents and caregivers.', "Last Saturday, parents and caregivers gathered at the community centre to talk about responsive caregiving, everyday play, and supporting children’s early learning at home. Thank you to every facilitator and every family who showed up ready to learn."],
                 ];
                 $ins = $pdo->prepare("INSERT INTO posts (title, slug, excerpt, body, status) VALUES (?, ?, ?, ?, 'published')");
                 foreach ($posts as $p) { $ins->execute([$p[0], slugify($p[0]), $p[1], $p[2]]); }
@@ -82,19 +82,19 @@ function slugify($text) {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Install — Wakulima Maendeleo Group</title>
+<title>Install — Malezi na Watoto</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
-  body { background: linear-gradient(135deg, #f5efe4, #ecf1e5); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; font-family: 'Inter', system-ui, sans-serif; }
+  body { background: linear-gradient(135deg, #f5efe4, #F5F1FB); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; font-family: 'Inter', system-ui, sans-serif; }
   .install-card { background:#fff; max-width:560px; width:100%; padding:48px; border-radius:16px; box-shadow:0 20px 60px rgba(35,52,30,.12); }
-  .install-card h1 { margin:0 0 8px; font-family:'Playfair Display', serif; color:#2f5233; font-size:28px; }
-  .install-card p.lead { color:#5c6a5a; margin:0 0 28px; }
-  .install-card label { display:block; margin:14px 0 6px; font-weight:600; color:#2f5233; font-size:14px; }
-  .install-card input { width:100%; padding:12px 14px; border:1px solid #d8dfd2; border-radius:8px; font-size:15px; }
-  .install-card input:focus { outline:none; border-color:#2f5233; box-shadow:0 0 0 3px rgba(47,82,51,.15); }
-  .install-card button { margin-top:24px; width:100%; background:#2f5233; color:#fff; border:0; padding:14px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; }
-  .install-card button:hover { background:#254123; }
+  .install-card h1 { margin:0 0 8px; font-family:'Playfair Display', serif; color:#52279B; font-size:28px; }
+  .install-card p.lead { color:#5f5670; margin:0 0 28px; }
+  .install-card label { display:block; margin:14px 0 6px; font-weight:600; color:#52279B; font-size:14px; }
+  .install-card input { width:100%; padding:12px 14px; border:1px solid #DCCBF4; border-radius:8px; font-size:15px; }
+  .install-card input:focus { outline:none; border-color:#52279B; box-shadow:0 0 0 3px rgba(82,39,155,.15); }
+  .install-card button { margin-top:24px; width:100%; background:#52279B; color:#fff; border:0; padding:14px; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; }
+  .install-card button:hover { background:#3B1C72; }
   .msg { padding:12px 16px; border-radius:8px; margin-bottom:16px; }
   .msg.error { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; }
   .msg.success { background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; }
@@ -103,7 +103,7 @@ function slugify($text) {
 </head>
 <body>
 <div class="install-card">
-  <h1>Install Wakulima Maendeleo Group</h1>
+  <h1>Install Malezi na Watoto</h1>
   <p class="lead">One-time setup — creates the database schema and your admin account.</p>
 
   <?php if ($errors): ?>

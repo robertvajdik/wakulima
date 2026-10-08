@@ -24,17 +24,17 @@ $jsonLd = [
     'datePublished' => date('c', strtotime($post['created_at'])),
     'dateModified' => date('c', strtotime($post['updated_at'] ?: $post['created_at'])),
     'mainEntityOfPage' => SITE_URL . '/news-single.php?slug=' . urlencode($post['slug']),
-    'image' => $post['image'] ? image_url($post['image']) : SITE_URL . '/assets/images/wakulima_logo_bw.jpeg',
+    'image' => $post['image'] ? image_url($post['image']) : SITE_URL . '/assets/images/watoto_logo.jpeg',
     'author' => [
         '@type' => 'Organization',
-        'name' => setting('site_name', 'Wakulima Maendeleo Group'),
+        'name' => setting('site_name', 'Malezi na Watoto'),
     ],
     'publisher' => [
         '@type' => 'Organization',
-        'name' => setting('site_name', 'Wakulima Maendeleo Group'),
+        'name' => setting('site_name', 'Malezi na Watoto'),
         'logo' => [
             '@type' => 'ImageObject',
-            'url' => SITE_URL . '/assets/images/wakulima_logo_bw.jpeg',
+            'url' => SITE_URL . '/assets/images/watoto_logo.jpeg',
         ],
     ],
 ];

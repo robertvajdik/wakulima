@@ -17,11 +17,11 @@ return [
     'nav.close_menu'   => 'Funga menyu',
 
     // Hero
-    'hero.eyebrow'     => 'Wakfu wa Wakulima wa Jamii · Afrika',
-    'hero.title'       => 'Kuwawezesha wakulima, kubadilisha jamii.',
-    'hero.subtitle'    => 'Wakfu wa wakulima wa jamii unaojenga maisha imara vijijini kupitia ushirikiano, kilimo endelevu, akiba, na kubadilishana maarifa.',
+    'hero.eyebrow'     => 'Malezi na Makuzi ya Awali ya Mtoto · Tanzania',
+    'hero.title'       => 'Kila mtoto anastahili kujifunza, kukua, na kustawi.',
+    'hero.subtitle'    => 'Tunafanya kazi na wazazi, walezi, na jamii kukuza malezi chanya, makuzi ya awali ya mtoto, na mazingira yanayowawezesha watoto wadogo kustawi.',
     'hero.cta_primary' => 'Gundua programu zetu',
-    'hero.cta_secondary' => 'Kutana na wakulima wetu',
+    'hero.cta_secondary' => 'Sisi ni nani',
 
     // Sections
     'section.who_we_are'   => 'Sisi ni Nani',
@@ -36,25 +36,24 @@ return [
     'section.our_impact'   => 'Athari Zetu',
 
     // Home / general text
-    'home.about_lead'  => 'Wakulima Maendeleo Group ni wakfu wa wakulima wa jamii uliojitolea kuwawezesha wakulima wadogo kote Afrika kupitia ushirikiano, kilimo endelevu, ushirikishwaji wa kifedha, na maendeleo ya jamii.',
+    'home.about_lead'  => 'Malezi na Watoto ni shirika la kijamii lililojitolea kuboresha ustawi, makuzi, na mustakabali wa watoto wadogo na familia zao.',
     'home.read_more'   => 'Soma zaidi',
     'home.view_all'    => 'Ona zote',
     'home.learn_more'  => 'Jifunze zaidi',
 
     // Stats
-    'stats.farmers'      => 'Wakulima waliofikiwa',
+    'stats.farmers'      => 'Watoto na familia waliofikiwa',
     'stats.communities'  => 'Jamii zilizohudumiwa',
     'stats.programs'     => 'Programu zinazoendelea',
     'stats.years'        => 'Miaka ya athari',
 
     // What we do items
-    'wwd.item1' => 'Kukuza mbinu za kilimo endelevu na zenye tija.',
-    'wwd.item2' => 'Kuwahamasisha wakulima kufanya kazi pamoja kwa ushirikiano.',
-    'wwd.item3' => 'Kusaidia akiba, mikopo, na uwezeshaji wa kifedha.',
-    'wwd.item4' => 'Kuwezesha kubadilishana maarifa na uzoefu miongoni mwa wakulima.',
-    'wwd.item5' => 'Kukuza usalama wa chakula na kuboresha maisha ya kaya.',
-    'wwd.item6' => 'Kuunganisha wakulima na fursa za maendeleo na wadau.',
-    'wwd.item7' => 'Kusaidia mipango ya jamii inayochangia maendeleo ya muda mrefu vijijini.',
+    'wwd.item1' => 'Kukuza malezi chanya na malezi yanayojali mahitaji ya mtoto.',
+    'wwd.item2' => 'Kusaidia makuzi ya awali ya mtoto na ujifunzaji.',
+    'wwd.item3' => 'Kuendesha usomaji wa vitabu kwa mazungumzo (Dialogic Booksharing) na shughuli za kujifunza zinazomlenga mtoto.',
+    'wwd.item4' => 'Kuwawezesha wazazi na walezi kwa maarifa ya vitendo kuhusu malezi.',
+    'wwd.item5' => 'Kuhamasisha jamii kusaidia ustawi wa watoto.',
+    'wwd.item6' => 'Kushirikiana na wadau wa ndani kuunda suluhisho endelevu kwa watoto na familia.',
 
     // Contact form
     'contact.name'    => 'Jina lako',
@@ -70,7 +69,7 @@ return [
     'contact.email_label' => 'Barua pepe',
 
     // Footer
-    'footer.about_short' => 'Wakfu wa wakulima wa jamii uliojitolea kuwawezesha wakulima wadogo kote Afrika.',
+    'footer.about_short' => 'Shirika la kijamii linaloboresha ustawi, makuzi, na mustakabali wa watoto wadogo na familia zao.',
     'footer.quick_links' => 'Viungo vya Haraka',
     'footer.contact'     => 'Wasiliana',
     'footer.follow'      => 'Tufuate',
@@ -90,7 +89,7 @@ return [
     // Newsletter
     'newsletter.eyebrow'      => 'Jarida',
     'newsletter.title'        => 'Endelea kupata habari.',
-    'newsletter.lead'         => 'Pata taarifa za mara kwa mara kuhusu programu zetu, mavuno na hadithi za jamii. Hakuna spam — kamwe.',
+    'newsletter.lead'         => 'Pata taarifa za mara kwa mara kuhusu programu zetu, vikao vya malezi na hadithi za jamii. Hakuna spam — kamwe.',
     'newsletter.email_label'  => 'Anwani ya barua pepe',
     'newsletter.placeholder'  => 'wewe@mfano.com',
     'newsletter.subscribe'    => 'Jiandikishe',
@@ -109,27 +108,27 @@ return [
     'go_home'           => 'Rudi ukurasa wa nyumbani',
 
     // ── SEO meta (title/description/keywords) ──
-    'meta.site.description'      => 'Wakulima Maendeleo Group inawawezesha wakulima wadogo wa Tanzania kupitia ushirikiano, kilimo endelevu, akiba na maarifa. Kutoka Mwanza, Tanzania.',
-    'meta.site.keywords'         => 'Wakulima Maendeleo, wakulima wadogo Tanzania, kilimo endelevu, ushirikiano, akiba za kikundi, maendeleo ya jamii, Mwanza, NGO Tanzania',
+    'meta.site.description'      => 'Malezi na Watoto ni shirika la kijamii nchini Tanzania linalokuza malezi chanya, makuzi ya awali ya mtoto, na ustawi wa watoto wadogo na familia zao.',
+    'meta.site.keywords'         => 'Malezi na Watoto, malezi chanya, makuzi ya awali ya mtoto, Dialogic Booksharing, walezi, ustawi wa mtoto, shirika la kijamii, Tanzania',
 
-    'meta.home.description'      => 'Wakulima Maendeleo Group inawawezesha wakulima wadogo wa Tanzania kupitia ushirikiano, kilimo endelevu, akiba na maarifa. Kutoka Mwanza, Tanzania.',
-    'meta.home.keywords'         => 'Wakulima Maendeleo, wakulima wadogo Tanzania, kilimo endelevu, ushirikiano, akiba za kikundi, maendeleo ya jamii, Mwanza, NGO Tanzania',
+    'meta.home.description'      => 'Malezi na Watoto ni shirika la kijamii nchini Tanzania linalokuza malezi chanya, makuzi ya awali ya mtoto, na ustawi wa watoto wadogo na familia zao.',
+    'meta.home.keywords'         => 'Malezi na Watoto, malezi chanya, makuzi ya awali ya mtoto, Dialogic Booksharing, walezi, ustawi wa mtoto, shirika la kijamii, Tanzania',
 
-    'meta.about.description'     => 'Kutana na Wakulima Maendeleo Group — msingi wa wakulima wa jamii mjini Mwanza, Tanzania. Jifunze dhamira yetu, maono, na timu.',
-    'meta.about.keywords'        => 'kuhusu Wakulima, kikundi cha wakulima Tanzania, kilimo cha jamii, msingi wa wakulima Mwanza, timu ya wakulima, NGO Tanzania',
+    'meta.about.description'     => 'Kutana na Malezi na Watoto — shirika la kijamii linalosaidia watoto wadogo, wazazi, na walezi nchini Tanzania. Jifunze ndoto yetu, dhamira yetu, na timu.',
+    'meta.about.keywords'        => 'kuhusu Malezi na Watoto, shirika la makuzi ya awali Tanzania, msaada wa malezi, walezi, makuzi ya mtoto, shirika la kijamii',
 
-    'meta.what_we_do.description'=> 'Kilimo endelevu, ushirikiano, akiba na mikopo, kubadilishana maarifa — angalia jinsi tunavyofanya kazi na wakulima wadogo kila siku.',
-    'meta.what_we_do.keywords'   => 'tunachofanya, kilimo endelevu Tanzania, ushirikiano, akiba na mikopo, kilimo cha jamii, mafunzo ya wakulima',
+    'meta.what_we_do.description'=> 'Malezi chanya, makuzi ya awali ya mtoto, usomaji wa vitabu kwa mazungumzo, na uhamasishaji wa jamii — angalia jinsi tunavyosaidia watoto na familia.',
+    'meta.what_we_do.keywords'   => 'tunachofanya, malezi chanya, malezi yanayojali, makuzi ya awali ya mtoto, Dialogic Booksharing, ujifunzaji unaomlenga mtoto',
 
-    'meta.programs.description'  => 'Chunguza programu zetu za wakulima: kilimo endelevu, akiba za kikundi, usalama wa chakula, maendeleo ya jamii, na kubadilishana maarifa.',
-    'meta.programs.keywords'     => 'programu za wakulima, kilimo endelevu, akiba za kikundi, akiba na mikopo, usalama wa chakula, maendeleo ya jamii Tanzania',
+    'meta.programs.description'  => 'Chunguza programu zetu: malezi chanya, makuzi ya awali ya mtoto, usomaji wa vitabu kwa mazungumzo, uwezeshaji wa wazazi, na ushiriki wa jamii.',
+    'meta.programs.keywords'     => 'programu za malezi, makuzi ya awali ya mtoto, Dialogic Booksharing, msaada kwa walezi, ujifunzaji unaomlenga mtoto, ushiriki wa jamii Tanzania',
 
-    'meta.news.description'      => 'Habari na hadithi kutoka Wakulima Maendeleo Group — matukio ya wakulima, warsha, mavuno, na miradi ya jamii.',
-    'meta.news.keywords'         => 'habari za wakulima, hadithi za jamii, taarifa za Wakulima, habari za kilimo Tanzania, hadithi za mavuno',
+    'meta.news.description'      => 'Habari na hadithi kutoka Malezi na Watoto — taarifa za vikao vya malezi, shughuli za kujifunza, na kazi zetu za jamii kwa watoto na familia.',
+    'meta.news.keywords'         => 'habari za malezi, hadithi za makuzi ya awali, taarifa za Malezi na Watoto, hadithi za jamii, watoto Tanzania',
 
-    'meta.gallery.description'   => 'Picha kutoka mashamba yetu, warsha, na matukio ya jamii katika Wakulima Maendeleo Group, Mwanza, Tanzania.',
-    'meta.gallery.keywords'      => 'picha za wakulima, matunzio ya jamii, matukio ya Wakulima, picha za kilimo Tanzania, picha za mashamba Mwanza',
+    'meta.gallery.description'   => 'Picha kutoka vikao vyetu vya malezi, usomaji wa vitabu, shughuli za kujifunza, na matukio ya jamii katika Malezi na Watoto, Tanzania.',
+    'meta.gallery.keywords'      => 'picha za vikao vya malezi, Dialogic Booksharing, ujifunzaji wa awali, matunzio ya jamii, matukio ya Malezi na Watoto',
 
     'meta.contact.description'   => 'Wasiliana nasi. Tunapatikana Mwanza, Tanzania — piga simu, tuma barua pepe, au tuma ujumbe kupitia fomu.',
-    'meta.contact.keywords'      => 'wasiliana Wakulima, mawasiliano ya wakulima Tanzania, mawasiliano NGO Mwanza, simu na barua pepe za kikundi',
+    'meta.contact.keywords'      => 'wasiliana Malezi na Watoto, msaada wa malezi Tanzania, mawasiliano ya shirika la watoto, simu, barua pepe',
 ];

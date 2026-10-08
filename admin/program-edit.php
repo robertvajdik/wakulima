@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $pageTitle = $row['id'] ? 'Edit program' : 'New program';
 require __DIR__ . '/includes/header.php';
-$iconChoices = ['leaf','users','coins','book','wheat','home','sun','water'];
+$iconChoices = ['child','heart','family','book','puzzle','users','home','leaf','sun','water','coins','wheat'];
 ?>
 <form method="post" enctype="multipart/form-data" class="editor">
   <?php echo csrf_field(); ?>

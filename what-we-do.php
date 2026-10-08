@@ -10,8 +10,8 @@ require __DIR__ . '/includes/header.php';
     <span class="eyebrow"><?php echo e(t('section.what_we_do')); ?></span>
     <h1><?php echo current_lang() === 'sw' ? 'Kile tunachofanya kila siku.' : 'What we do, every day.'; ?></h1>
     <p class="lead"><?php echo current_lang() === 'sw'
-        ? 'Kazi zetu za msingi zinazounga mkono wakulima wadogo kote Afrika.'
-        : 'The core activities that support smallholder farmers across Africa.'; ?></p>
+        ? 'Kazi zetu za msingi zinazosaidia watoto wadogo, wazazi, na walezi.'
+        : 'The core activities that support young children, parents, and caregivers.'; ?></p>
   </div>
 </section>
 
@@ -24,7 +24,6 @@ require __DIR__ . '/includes/header.php';
       <li><?php echo e(t('wwd.item4')); ?></li>
       <li><?php echo e(t('wwd.item5')); ?></li>
       <li><?php echo e(t('wwd.item6')); ?></li>
-      <li><?php echo e(t('wwd.item7')); ?></li>
     </ul>
     <p class="section-actions centered">
       <a href="programs.php" class="btn btn-accent"><?php echo e(t('hero.cta_primary')); ?> →</a>

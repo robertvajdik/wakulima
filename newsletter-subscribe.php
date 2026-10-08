@@ -1,5 +1,5 @@
 <?php
-// Wakulima Maendeleo Group — newsletter subscribe handler.
+// Malezi na Watoto — newsletter subscribe handler.
 // POST { email, csrf }. Redirects back with a flash message.
 
 require_once __DIR__ . '/includes/functions.php';

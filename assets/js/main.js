@@ -1,4 +1,4 @@
-// Wakulima Maendeleo Group — public JS
+// Malezi na Watoto — public JS
 (function () {
     // Mobile nav toggle
     const navToggle = document.getElementById('navToggle');

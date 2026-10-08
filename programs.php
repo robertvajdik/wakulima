@@ -4,7 +4,7 @@ $pageTitle = t('nav.programs');
 $pageDescription = t('meta.programs.description');
 $pageKeywords    = t('meta.programs.keywords');
 $programs = $pdo->query("SELECT * FROM programs WHERE is_active = 1 ORDER BY sort_order ASC, id ASC")->fetchAll();
-$icons = ['leaf' => '🌱', 'users' => '🤝', 'coins' => '💰', 'book' => '📖', 'wheat' => '🌾', 'home' => '🏡', 'sun' => '☀️', 'water' => '💧'];
+$icons = ['leaf' => '🌱', 'users' => '🤝', 'coins' => '💰', 'book' => '📖', 'wheat' => '🌾', 'home' => '🏡', 'sun' => '☀️', 'water' => '💧', 'child' => '🧒', 'heart' => '💛', 'family' => '👪', 'puzzle' => '🧩'];
 require __DIR__ . '/includes/header.php';
 ?>
 <section class="page-hero">
@@ -12,8 +12,8 @@ require __DIR__ . '/includes/header.php';
     <span class="eyebrow"><?php echo e(t('section.programs')); ?></span>
     <h1><?php echo current_lang() === 'sw' ? 'Programu zetu.' : 'Our programs.'; ?></h1>
     <p class="lead"><?php echo current_lang() === 'sw'
-        ? 'Njia halisi tunazotumia kuleta mabadiliko katika maisha ya wakulima.'
-        : 'The concrete ways we drive change in farmers’ lives.'; ?></p>
+        ? 'Njia halisi tunazotumia kuleta mabadiliko katika maisha ya watoto na familia.'
+        : 'The concrete ways we make a difference for children and families.'; ?></p>
   </div>
 </section>
 <section>
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/header.php';
       <div class="program-grid">
         <?php foreach ($programs as $p): ?>
           <div class="program-card">
-            <div class="icon"><?php echo $icons[$p['icon']] ?? '🌾'; ?></div>
+            <div class="icon"><?php echo $icons[$p['icon']] ?? '🌱'; ?></div>
             <h3><?php echo e($p['title']); ?></h3>
             <p><?php echo e($p['summary']); ?></p>
             <?php if (!empty($p['body'])): ?>

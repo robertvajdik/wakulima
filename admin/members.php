@@ -25,7 +25,7 @@ $rows = $pdo->query("SELECT * FROM members ORDER BY sort_order ASC, id ASC")->fe
     <div class="empty-state">
       <div class="icon">♦</div>
       <h3>No team members yet</h3>
-      <p>Add the people behind Wakulima so visitors can meet the team.</p>
+      <p>Add the people behind Malezi na Watoto so visitors can meet the team.</p>
       <a href="member-edit.php" class="btn-primary">+ Add a member</a>
     </div>
   <?php else: ?>
@@ -35,7 +35,7 @@ $rows = $pdo->query("SELECT * FROM members ORDER BY sort_order ASC, id ASC")->fe
         <tbody>
         <?php foreach ($rows as $r): ?>
           <tr>
-            <td class="col-thumb" data-label="Photo"><div class="thumb-mini"><img src="<?php echo e(image_url($r['photo'], SITE_URL . '/assets/images/wakulima_logo_bw.jpeg')); ?>" alt=""></div></td>
+            <td class="col-thumb" data-label="Photo"><div class="thumb-mini"><img src="<?php echo e(image_url($r['photo'], SITE_URL . '/assets/images/watoto_mark.jpg')); ?>" alt=""></div></td>
             <td data-label="Name"><a href="member-edit.php?id=<?php echo $r['id']; ?>"><?php echo e($r['full_name']); ?></a></td>
             <td class="muted" data-label="Role"><?php echo e($r['role_title']); ?></td>
             <td data-label="Order"><?php echo (int)$r['sort_order']; ?></td>

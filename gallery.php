@@ -17,8 +17,8 @@ require __DIR__ . '/includes/header.php';
     <span class="eyebrow"><?php echo e(t('section.gallery')); ?></span>
     <h1><?php echo current_lang() === 'sw' ? 'Picha kutoka kwenye harakati zetu.' : 'Photos from our work.'; ?></h1>
     <p class="lead"><?php echo current_lang() === 'sw'
-        ? 'Mafunzo, siku za shambani, na wanachama wetu.'
-        : 'Trainings, field days, and the members that make it possible.'; ?></p>
+        ? 'Vikao vya malezi, usomaji wa vitabu, shughuli za kujifunza, na watu wanaofanikisha kazi hii.'
+        : 'Parenting sessions, booksharing, learning activities, and the people who make it possible.'; ?></p>
   </div>
 </section>
 

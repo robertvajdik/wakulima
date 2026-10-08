@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="login-body">
 <div class="login-card">
-  <img src="<?php echo SITE_URL; ?>/assets/images/wakulima_logo_bw.jpeg" alt="" class="login-logo">
+  <img src="<?php echo SITE_URL; ?>/assets/images/watoto_mark.jpg" alt="" class="login-logo">
   <h1>Welcome back</h1>
   <p class="lead">Sign in to manage <?php echo e(setting('site_name')); ?>.</p>
   <?php if ($error): ?><div class="alert alert-error"><?php echo e($error); ?></div><?php endif; ?>

@@ -1,5 +1,5 @@
 <?php
-// Wakulima Maendeleo Group — one-click unsubscribe.
+// Malezi na Watoto — one-click unsubscribe.
 // GET ?token=... — deactivates the matching subscriber.
 
 require_once __DIR__ . '/includes/functions.php';

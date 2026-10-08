@@ -24,7 +24,7 @@ $rows = $pdo->query("SELECT id, title, slug, icon, summary, sort_order, is_activ
     <div class="empty-state">
       <div class="icon">◉</div>
       <h3>No programs yet</h3>
-      <p>Set up the programs you offer to farmers and communities.</p>
+      <p>Set up the programs you offer to children, families, and communities.</p>
       <a href="program-edit.php" class="btn-primary">+ Add a program</a>
     </div>
   <?php else: ?>

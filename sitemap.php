@@ -1,5 +1,5 @@
 <?php
-// Wakulima Maendeleo Group — dynamic sitemap.xml generator.
+// Malezi na Watoto — dynamic sitemap.xml generator.
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/db.php';
 
